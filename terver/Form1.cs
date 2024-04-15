@@ -22,15 +22,15 @@ namespace terver
         {
             chart1.Series[0].Points.Clear();
             
-            //double func = lambda * Math.Pow(Math.E, -x*lambda);
-            int seed = int.Parse(textBox1.Text); //параметр рандома
+            //double func = lambda * Math.Pow(Math.E, -x*lambda); - функция
+            int seed = int.Parse(textBox1.Text); // параметр рандома
             Random r = new Random(seed);
             int N  = int.Parse(textBox2.Text); // объем выборки
             double spread = r.NextDouble() * seed; // разброс
             double lambda = double.Parse(textBox3.Text); // параметр распределения
 
-            int k = (int)Math.Log(N, 2) + 1; // количество интервалов
-
+            //int k = (int)Math.Log(N, 2) + 1; количество интервалов из объема выборки
+            int k = int.Parse(textBox4.Text); // количество интервалов
             double delta_x = spread / k; // длина интервала
 
             double[] middle_interval = new double[k]; // середины интервалов
